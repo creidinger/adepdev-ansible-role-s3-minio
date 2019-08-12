@@ -1,0 +1,17 @@
+---
+- name: Enable Firewall
+  ufw:
+    state: enabled
+
+- name: Enable Firewall Loggin
+  ufw:
+    logging: on
+
+- name: Open minio required ports
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    proto: tcp
+  loop:
+    - "22" #ssh
+    - "9000"

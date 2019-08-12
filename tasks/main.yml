@@ -1,0 +1,20 @@
+---
+# Minio S3 setup
+# https://docs.min.io/
+
+# https://linuxconfig.org/how-to-create-systemd-service-unit-in-linux
+- name: Copy mino.service file to /etc/systemd/system
+  template:
+    src: minio.service.j2
+    dest: /etc/systemd/system/minio.service
+
+- include: open-ports.yml
+
+- name: Download minio s3
+  get_url:
+    url: https://dl.minio.io/server/minio/release/linux-amd64/minio
+    dest: /usr/local/bin
+    mode: '770'
+
+- name: start minio service
+  command: systemctl start minio.service
