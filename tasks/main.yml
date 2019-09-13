@@ -13,13 +13,13 @@
     src: profile.j2
     dest: /etc/profile
 
-- include: open-ports.yml
+# - include: open-ports.yml
 
 - name: Download minio s3
   get_url:
     url: https://dl.minio.io/server/minio/release/linux-amd64/minio
     dest: /usr/local/bin
-    mode: '0777'
+    mode: '0770'
 
 - name: start minio service
   command: systemctl start minio.service
