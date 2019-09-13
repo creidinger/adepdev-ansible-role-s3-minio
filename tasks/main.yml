@@ -13,7 +13,7 @@
     src: profile.j2
     dest: /etc/profile
 
-# - include: open-ports.yml
+- include: open-ports.yml
 
 - name: Download minio s3
   get_url:
