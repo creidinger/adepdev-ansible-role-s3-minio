@@ -15,11 +15,19 @@
 
 - include: open-ports.yml
 
-- name: Download minio s3
+# https://docs.min.io/docs/minio-quickstart-guide.html
+- name: Download minio server
   get_url:
     url: https://dl.minio.io/server/minio/release/linux-amd64/minio
     dest: /usr/local/bin
     mode: '0770'
+
+# https://docs.min.io/docs/minio-client-quickstart-guide.html
+- name: Download minio client
+  get_url:
+    url: https://dl.min.io/client/mc/release/linux-amd64/mc
+    dest: /usr/local/bin
+    mode: '0755'
 
 - name: start minio service
   command: systemctl start minio.service
