@@ -2,3 +2,5 @@
 # defautl keys are for dev only
 s3_access_key: VSZACDCGYKSFWAGJGCXF
 s3_secret_key: xUUDtJbSjB9XxUjwjRwj7m5CLe2EzaNbbCpnXsAM
+
+s3_dir:        /home/vagrant/s3

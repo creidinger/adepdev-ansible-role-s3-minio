@@ -15,6 +15,12 @@
 
 - include: open-ports.yml
 
+- name: "Create s3 folder {{ s3_dir }}"
+  file:
+    path: /etc/some_directory
+    state: directory
+    mode: '0766'
+
 # https://docs.min.io/docs/minio-quickstart-guide.html
 - name: Download minio server
   get_url:
