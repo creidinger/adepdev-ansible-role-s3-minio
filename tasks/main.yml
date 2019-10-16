@@ -20,7 +20,7 @@
     path: "{{ s3_dir }}"
     state: directory
     mode: '0766'
-    when: make_s3_dir
+  when: make_s3_dir
 
 # https://docs.min.io/docs/minio-quickstart-guide.html
 - name: Download minio server
