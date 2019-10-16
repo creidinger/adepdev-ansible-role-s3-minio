@@ -17,7 +17,7 @@
 
 - name: "Create s3 folder {{ s3_dir }}"
   file:
-    path: /etc/some_directory
+    path: "{{ s3_dir }}"
     state: directory
     mode: '0766'
     when: make_s3_dir
