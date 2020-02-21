@@ -12,7 +12,7 @@ ExecStart=/usr/local/bin/minio server {{ s3_dir }}
 
 # restart settings
 StartLimitBurst=5
-StartLimitIntercvalSec=10
+StartLimitIntervalSec=10
 RestartSec=3
 Restart=always
 
